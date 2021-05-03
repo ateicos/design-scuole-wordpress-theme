@@ -3,7 +3,7 @@ global $post;
 
 $studenti = dsi_get_option( "studenti", "la_scuola" );
 $classi = dsi_get_option( "classi", "la_scuola" );
-$media = intval($studenti / $classi);
+$media = ( $classi == 0 ? $studenti : intval($studenti / $classi) ); // se $classi è uguale a 0, mostra gli studenti, altrimenti calcola la media.
 ?>
 
 	<section class="section section-padding py-5 bg-gray-light">
